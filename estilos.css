@@ -1,0 +1,126 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  /*outline: 1px solid violet;*/
+  font-family: 'Laila', serif;
+  transition-duration: .01s;
+}
+.contenedor-principal{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(violet,steelblue);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor{
+  min-width: 75%;
+  width: 440px;
+  min-height: 75vh;
+  background-color: rgb(250,253,255);
+  border-radius: .7rem;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+}
+.titulo{
+  background-color: rgb(28,198,174);
+  border-radius: .7rem .7rem 0 0; 
+  color: #fff;
+  font-size: 1.7rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton-enviar{
+  width: 100%;
+  height: 100%;
+  font-size: 1.7rem;
+  border-radius: 0 0 .7rem .7rem;
+  border: none;
+  color: #222;
+  background: linear-gradient(#eee,#ccc);
+}
+.boton-enviar:hover{
+  cursor: pointer;
+  color: #292b2c;
+}
+.contenido{
+  padding: 1rem;
+  
+  display: grid;
+  grid-template-columns:1fr 5fr 1fr;
+  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-template-areas: 'lado-I-1 input-tex-1 lado-D'
+                       'lado-I-2 input-tex-2 lado-D'
+                       'lado-I-3 input-tex-3 lado-D'
+                       'lado-I-4 input-tex-4 lado-D';
+  
+  position: relative;
+}
+input[class*="input-text"]{
+  margin: .5rem 0;
+  background-color: whitesmoke;
+  padding: .75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  
+  border: 1px solid #ddd;
+  transition: border-width 0.2s ease;
+}
+input[class*="input-text"]:focus {
+  color: rgb(28,198,174);
+  
+  outline: none;
+  border-color: rgb(28,198,174);
+  border-left-width: 45px;
+}
+.input-text-1{
+  grid-area: input-tex-1;
+}
+.input-text-2{
+  grid-area: input-tex-2;
+}
+.input-text-3{
+  grid-area: input-tex-3;
+}
+.input-text-4{
+  grid-area: input-tex-4;
+}
+
+.material-icons{
+  color: #fff;
+  font-size: 1em;
+  position: absolute;
+  
+  
+  opacity: 0;
+  left: 0;
+  transition: all 0.1s ease-in;
+  
+}
+.edit{
+  margin-top:21px;
+  grid-area:input-tex-1;
+}
+.person-add{
+  margin-top:21px;
+  grid-area:input-tex-2;
+}
+.timer{
+  margin-top:21px;
+  grid-area:input-tex-3;
+}
+.share{
+  margin-top:21px;
+  grid-area:input-tex-4;
+}
+input[class*="input-text"]:focus + i {
+  opacity: 1;
+  left: 11px;
+  transition: all 0.25s ease-out;
+  color: #fff;
+}
